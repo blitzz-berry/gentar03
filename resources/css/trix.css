@@ -1,0 +1,22 @@
+/* Trix Editor Styles */
+@import 'trix/dist/trix.css';
+
+/* Custom styling for Trix editor */
+.trix-content {
+    border: 1px solid #d1d5db;
+    border-radius: 0.5rem;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.trix-button-group {
+    background-color: #f9fafb;
+    border-bottom: 1px solid #e5e7eb;
+    padding: 0.5rem;
+    border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.trix-content {
+    border-top: 1px solid #e5e7eb;
+    border-radius: 0 0 0.5rem 0.5rem;
+}

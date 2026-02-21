@@ -1,0 +1,231 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --gentar-yellow: #f5c400;
+    --gentar-yellow-hover: #e3b300;
+    --gentar-overlay: rgba(11, 42, 74, 0.6);
+    --chatbot-bot-bubble: #f3f4f6;
+    --chatbot-user-bubble: #0b2a4a;
+    --chatbot-avatar-bg: #fde68a;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+[x-cloak] {
+    display: none !important;
+}
+
+.site-navbar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1000;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, backdrop-filter 0.3s ease, border-color 0.3s ease;
+}
+
+.site-navbar .site-nav-link,
+.site-navbar .site-brand-text,
+.site-navbar .site-mobile-toggle {
+    transition: color 0.3s ease;
+}
+
+.site-navbar.is-home {
+    background-color: rgba(255, 255, 255, 0.14);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.24);
+}
+
+.site-navbar.is-home .site-nav-link,
+.site-navbar.is-home .site-brand-text,
+.site-navbar.is-home .site-mobile-toggle {
+    color: #ffffff;
+}
+
+.site-navbar.scrolled {
+    background-color: #ffffff;
+    box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
+    border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+}
+
+.site-navbar.scrolled .site-nav-link,
+.site-navbar.scrolled .site-brand-text,
+.site-navbar.scrolled .site-mobile-toggle {
+    color: #0b2a4a;
+}
+
+.site-navbar .site-nav-link:hover,
+.site-navbar .site-mobile-link:hover,
+.site-navbar .site-mobile-toggle:hover {
+    color: #f5c400;
+}
+
+.site-mobile-menu {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.site-navbar.is-home .site-mobile-menu {
+    background-color: rgba(11, 42, 74, 0.92);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.site-navbar.is-home .site-mobile-link {
+    color: #ffffff;
+}
+
+.site-navbar.scrolled .site-mobile-menu {
+    background-color: #ffffff;
+    border-top-color: rgba(15, 23, 42, 0.08);
+}
+
+.site-navbar.scrolled .site-mobile-link {
+    color: #0b2a4a;
+}
+
+.hero-carousel {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.hero-carousel-track {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    transition: transform 0.7s ease;
+    will-change: transform;
+}
+
+.hero-carousel-slide {
+    flex: 0 0 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.hero-carousel-overlay {
+    position: absolute;
+    inset: 0;
+    background: var(--gentar-overlay);
+    z-index: 2;
+}
+
+.hero-carousel-content {
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-carousel-arrow {
+    position: absolute;
+    top: 50%;
+    z-index: 4;
+    display: inline-flex;
+    height: 44px;
+    width: 44px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9999px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    background-color: rgba(15, 23, 42, 0.35);
+    color: #ffffff;
+    transform: translateY(-50%);
+    transition: background-color 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+}
+
+.hero-carousel-arrow svg {
+    height: 20px;
+    width: 20px;
+}
+
+.hero-carousel-arrow:hover {
+    background-color: rgba(245, 196, 0, 0.9);
+    border-color: rgba(245, 196, 0, 0.95);
+    color: #0b2a4a;
+}
+
+.hero-carousel-arrow-left {
+    left: 1rem;
+}
+
+.hero-carousel-arrow-right {
+    right: 1rem;
+}
+
+@media (max-width: 640px) {
+    .hero-carousel-arrow {
+        height: 38px;
+        width: 38px;
+    }
+
+    .hero-carousel-arrow-left {
+        left: 0.6rem;
+    }
+
+    .hero-carousel-arrow-right {
+        right: 0.6rem;
+    }
+}
+
+.chatbot-fab,
+.chatbot-cta,
+.chatbot-send-btn {
+    background-color: var(--gentar-yellow);
+}
+
+.chatbot-fab:hover,
+.chatbot-cta:hover,
+.chatbot-send-btn:hover {
+    background-color: var(--gentar-yellow-hover);
+}
+
+.chatbot-sheet {
+    border: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+.chatbot-tooltip {
+    border: 1px solid rgba(15, 23, 42, 0.1);
+}
+
+.chatbot-avatar {
+    background: var(--chatbot-avatar-bg);
+}
+
+.chatbot-bot-bubble {
+    background-color: var(--chatbot-bot-bubble);
+}
+
+.chatbot-user-bubble {
+    background-color: var(--chatbot-user-bubble);
+}
+
+.chatbot-chip {
+    border-color: rgba(100, 116, 139, 0.35);
+    background-color: #ffffff;
+}
+
+.chatbot-chip:hover {
+    border-color: rgba(100, 116, 139, 0.7);
+    background-color: #f8fafc;
+}
